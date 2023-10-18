@@ -8,13 +8,19 @@ import com.zerobase.convpay.dto.PayCancelResponse;
 import com.zerobase.convpay.dto.PayRequest;
 import com.zerobase.convpay.dto.PayResponse;
 import com.zerobase.convpay.service.ConveniencePayService;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 public class UserClient {
     public static void main(String[] args) {
         // 사용자 -> 편결이 -> 머니
 
-        ApplicationConfig applicationConfig = new ApplicationConfig();
-        ConveniencePayService conveniencePayService = applicationConfig.conveniencePayServiceDiscountPayMethod();
+        ApplicationContext applicationContext =
+                new AnnotationConfigApplicationContext(ApplicationConfig.class);
+
+        ConveniencePayService conveniencePayService =
+                applicationContext.getBean("conveniencePayService",
+                        ConveniencePayService.class);
 
         // 결제 1000원
         PayRequest payRequest = new PayRequest(PayMethodType.CARD,
