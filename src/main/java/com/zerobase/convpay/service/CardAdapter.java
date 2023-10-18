@@ -1,9 +1,6 @@
 package com.zerobase.convpay.service;
 
-import com.zerobase.convpay.Type.CancelPaymentResult;
-import com.zerobase.convpay.Type.CardUseCancelResult;
-import com.zerobase.convpay.Type.CardUseResult;
-import com.zerobase.convpay.Type.PaymentResult;
+import com.zerobase.convpay.Type.*;
 
 public class CardAdapter implements PaymentInterface{
     // 1. 인증
@@ -32,6 +29,11 @@ public class CardAdapter implements PaymentInterface{
             return CardUseCancelResult.USE_CANCEL_FAIL;
         }
         return CardUseCancelResult.USE_CANCEL_SUCCESS;
+    }
+
+    @Override
+    public PayMethodType getPayMethodType() {
+        return PayMethodType.CARD;
     }
 
     @Override

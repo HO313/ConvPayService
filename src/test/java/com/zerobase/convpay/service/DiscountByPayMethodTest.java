@@ -1,7 +1,7 @@
 package com.zerobase.convpay.service;
 
 import com.zerobase.convpay.Type.ConvenienceType;
-import com.zerobase.convpay.Type.PayMeyhodType;
+import com.zerobase.convpay.Type.PayMethodType;
 import com.zerobase.convpay.dto.PayRequest;
 import org.junit.jupiter.api.Test;
 
@@ -14,9 +14,9 @@ class DiscountByPayMethodTest {
     @Test
     void discountSuccess() {
         //given
-        PayRequest payRequestMoney = new PayRequest(PayMeyhodType.MONEY,
+        PayRequest payRequestMoney = new PayRequest(PayMethodType.MONEY,
                 ConvenienceType.G25, 1000);
-        PayRequest payRequestCard = new PayRequest(PayMeyhodType.CARD,
+        PayRequest payRequestCard = new PayRequest(PayMethodType.CARD,
                 ConvenienceType.G25, 1000);
 
         //when

@@ -1,5 +1,5 @@
 package com.zerobase.convpay.Type;
 
-public enum PayMeyhodType {
+public enum PayMethodType {
     MONEY,CARD
 }

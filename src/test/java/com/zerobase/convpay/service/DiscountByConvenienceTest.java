@@ -1,7 +1,7 @@
 package com.zerobase.convpay.service;
 
 import com.zerobase.convpay.Type.ConvenienceType;
-import com.zerobase.convpay.Type.PayMeyhodType;
+import com.zerobase.convpay.Type.PayMethodType;
 import com.zerobase.convpay.dto.PayRequest;
 import org.junit.jupiter.api.Test;
 
@@ -12,9 +12,9 @@ class DiscountByConvenienceTest {
     @Test
     void discountTest() {
         //given
-        PayRequest payRequestG25 = new PayRequest(PayMeyhodType.MONEY, ConvenienceType.G25, 1000);
-        PayRequest payRequestCU = new PayRequest(PayMeyhodType.MONEY, ConvenienceType.CU, 1000);
-        PayRequest payRequestSEVEN = new PayRequest(PayMeyhodType.MONEY, ConvenienceType.SEVEN, 1000);
+        PayRequest payRequestG25 = new PayRequest(PayMethodType.MONEY, ConvenienceType.G25, 1000);
+        PayRequest payRequestCU = new PayRequest(PayMethodType.MONEY, ConvenienceType.CU, 1000);
+        PayRequest payRequestSEVEN = new PayRequest(PayMethodType.MONEY, ConvenienceType.SEVEN, 1000);
 
         //when
         Integer discountedAmountG25 = discountByConvenience.getDiscountedAmount(payRequestG25);
