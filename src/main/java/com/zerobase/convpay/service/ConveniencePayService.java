@@ -9,8 +9,10 @@ import com.zerobase.convpay.dto.PayResponse;
 public class ConveniencePayService {    // 편결이
     private final MoneyAdapter moneyAdapter = new MoneyAdapter();
     private final CardAdapter cardAdapter = new CardAdapter();
+//    private final DiscountInterface discountInterface = new DiscountByPayMethod();
+    private final DiscountInterface discountInterface = new DiscountByConvenience();
 
-
+ㅠ
     public PayResponse pay(PayRequest payRequest) {
         PaymentInterface paymentInterface;
 
@@ -20,8 +22,8 @@ public class ConveniencePayService {    // 편결이
             paymentInterface = moneyAdapter;
         }
 
-
-        PaymentResult payment = paymentInterface.payment(payRequest.getPayAmount());
+        Integer discountedAmount = discountInterface.getDiscountedAmount(payRequest);
+        PaymentResult payment = paymentInterface.payment(discountedAmount);
 
 
         if (payment == PaymentResult.PAYMENT_FAIL) {
@@ -29,7 +31,7 @@ public class ConveniencePayService {    // 편결이
         }
 
         // Success Case
-        return new PayResponse(PayResult.SUCCESS, payRequest.getPayAmount());
+        return new PayResponse(PayResult.SUCCESS, discountedAmount);
 
     }
 
