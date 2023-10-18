@@ -12,7 +12,7 @@ public class ConveniencePayService {    // 편결이
 //    private final DiscountInterface discountInterface = new DiscountByPayMethod();
     private final DiscountInterface discountInterface = new DiscountByConvenience();
 
-ㅠ
+
     public PayResponse pay(PayRequest payRequest) {
         PaymentInterface paymentInterface;
 
