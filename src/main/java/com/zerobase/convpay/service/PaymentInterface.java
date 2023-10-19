@@ -6,7 +6,9 @@ import com.zerobase.convpay.Type.PaymentResult;
 
 public interface PaymentInterface {
     PayMethodType getPayMethodType();
+
     PaymentResult payment(Integer payAmount);
+
     CancelPaymentResult cancelPayment(Integer cancelAmount);
 
 }

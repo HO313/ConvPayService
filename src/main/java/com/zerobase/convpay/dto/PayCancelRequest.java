@@ -7,19 +7,8 @@ public class PayCancelRequest {
 
     // 결제 수단
     PayMethodType payMeyhodType;
-
-
-    public PayMethodType getPayMeyhodType() {
-        return payMeyhodType;
-    }
-
-    public void setPayMeyhodType(PayMethodType payMeyhodType) {
-        this.payMeyhodType = payMeyhodType;
-    }
-
     // 편의점 종류
     ConvenienceType convenienceType;
-
     // 결제 취소 금액
     Integer payCancelAmount;
 
@@ -27,6 +16,14 @@ public class PayCancelRequest {
         this.payMeyhodType = payMeyhodType;
         this.convenienceType = convenienceType;
         this.payCancelAmount = payCancelAmount;
+    }
+
+    public PayMethodType getPayMeyhodType() {
+        return payMeyhodType;
+    }
+
+    public void setPayMeyhodType(PayMethodType payMeyhodType) {
+        this.payMeyhodType = payMeyhodType;
     }
 
     public ConvenienceType getConvenienceType() {

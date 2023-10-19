@@ -17,7 +17,7 @@ public class MoneyAdapter implements PaymentInterface {
     public MoneyUseCancelResult useCancel(Integer payCancelAmount) {
         System.out.println("MoneyAdapter.useCancel : " + payCancelAmount);
 
-        if (payCancelAmount  < 100) {
+        if (payCancelAmount < 100) {
             return MoneyUseCancelResult.MONEY_USE_CANCEL_FAIL;
         }
         return MoneyUseCancelResult.MONEY_USE_CANCEL_SUCCESS;
@@ -32,7 +32,7 @@ public class MoneyAdapter implements PaymentInterface {
     public PaymentResult payment(Integer payAmount) {
         MoneyUseResult moneyUseResult = use(payAmount);
 
-        if (moneyUseResult == MoneyUseResult.USE_FAIL){
+        if (moneyUseResult == MoneyUseResult.USE_FAIL) {
             return PaymentResult.PAYMENT_FAIL;
         }
 
@@ -44,7 +44,7 @@ public class MoneyAdapter implements PaymentInterface {
     public CancelPaymentResult cancelPayment(Integer cancelAmount) {
         MoneyUseCancelResult moneyUseCancelResult = useCancel(cancelAmount);
 
-        if (moneyUseCancelResult == MoneyUseCancelResult.MONEY_USE_CANCEL_FAIL){
+        if (moneyUseCancelResult == MoneyUseCancelResult.MONEY_USE_CANCEL_FAIL) {
             return CancelPaymentResult.CANCEL_PAYMENT_FAIL;
         }
 
