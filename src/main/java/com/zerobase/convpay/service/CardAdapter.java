@@ -1,6 +1,7 @@
 package com.zerobase.convpay.service;
 
 import com.zerobase.convpay.Type.*;
+import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
 

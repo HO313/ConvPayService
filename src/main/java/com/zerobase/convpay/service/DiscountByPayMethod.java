@@ -1,6 +1,7 @@
 package com.zerobase.convpay.service;
 
 import com.zerobase.convpay.dto.PayRequest;
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Component;
 
 @Component
@@ -8,6 +9,7 @@ public class DiscountByPayMethod implements DiscountInterface {
 
     @Override
     public Integer getDiscountedAmount(PayRequest payRequest) {
+        System.out.println("DiscountByPaymethod called");
         switch (payRequest.getPayMeyhodType()) {
 
             case MONEY:
